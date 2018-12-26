@@ -1,0 +1,19 @@
+:host {
+  display: contents;
+}
+
+.contents {
+  display: contents;
+}
+
+.first-column {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.caret, .indent {
+  width: 20px;
+  display: inline-block;
+}
+
+

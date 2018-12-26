@@ -1,0 +1,21 @@
+<tr (click)="toggleChildren()">
+  <div class="contents" #columns>
+    <td style="user-select: none;">
+      <ng-container #indents></ng-container>
+      <ng-container #caret></ng-container>
+      <span #firstColumn class="first-column"></span>
+    </td>
+    <ng-content select=".node-columns"></ng-content>
+  </div>
+</tr>
+<div class="contents" #children [hidden]="!areChildrenVisible">
+  <ng-content select=".node-children"></ng-content>
+</div>
+<ng-template #caretTmpl>
+  <span class="caret">
+    <i class="fa" [ngClass]="{'fa-caret-down': areChildrenVisible, 'fa-caret-right': !areChildrenVisible}" [hidden]="!hasChildren"></i>
+  </span>
+</ng-template>
+<ng-template #indentTmpl>
+  <span class="indent"></span>
+</ng-template>
