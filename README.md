@@ -4,6 +4,7 @@ A tree table component for Angular.
 ![alt text](https://github.com/sardanalokesh/ng-tree-table/blob/master/src/assets/images/tree-table-ss.png) 
 
 # usage
+app.module.ts
 ```ts
 @NgModule({
   declarations: [
@@ -16,8 +17,22 @@ A tree table component for Angular.
   providers: [],
   bootstrap: [AppComponent]
 })
+export class AppModule { }
 ```
 
+app.component.ts
+```ts
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.scss']
+})
+export class AppComponent {
+  columns: string[] = ["Nodes", "Column 1", "Column 2", "Column 3"];
+}
+```
+
+app.component.html
 ```html
 <tree-table [columns]="columns">
   <tree-table-node>
